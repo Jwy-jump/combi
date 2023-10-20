@@ -180,8 +180,8 @@ function App() {
         <button onClick={stopDetection}>Stop detection</button>
       )}
 
-      <Webcam id="image" className="hidden" />
-
+      {/* <Webcam id="image" className="hidden" /> */}
+      <img id="image" src="https://files.catbox.moe/fpw4qb.jpg" alt="Fixed Image" crossorigin="anonymous" className="hidden" />
       {nameModel === "Face" ? (
         <div className="blend-shapes">
           <ul className="blend-shapes-list" id="video-blend-shapes"></ul>
@@ -195,3 +195,4 @@ function App() {
 }
 
 export default App;
+
