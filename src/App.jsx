@@ -4,7 +4,7 @@ import handLandmarker from "./handLandmarker";
 import { FaceLandmarker, DrawingUtils } from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest";
 import React, { useState } from "react";
 import Webcam from "react-webcam";
-
+// import render from "./renderer";
 const imageBlendShapes = document.getElementById("image-blend-shapes");
 
 // TODO: problem with html tags on return
@@ -169,9 +169,10 @@ function App() {
       <div>
         <label>Model :</label>
         <select onChange={handleNameModelChange} value={nameModel}>
+          <option value={"Hand"}>Hand</option>
           <option value={"Pose"}>Pose</option>
           <option value={"Face"}>Face</option>
-          <option value={"Hand"}>Hand</option>
+
         </select>
       </div>
       {isDetecting === 0 ? (
@@ -182,7 +183,7 @@ function App() {
 
       {/* <Webcam id="image" className="hidden" /> */}
       <img id="image" src="https://files.catbox.moe/fpw4qb.jpg" alt="Fixed Image" crossorigin="anonymous" className="hidden" />
-      {nameModel === "Face" ? (
+      {nameModel === "Hand" ? (
         <div className="blend-shapes">
           <ul className="blend-shapes-list" id="video-blend-shapes"></ul>
         </div>
